@@ -2,7 +2,8 @@
 
 This demo showcases Mutiple Video Object Detection with SSD.
 This demo haven't implement NIC part, the data is on the local side.
-https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/System.png
+
+![image]https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/System.png
 
 Other demo objectives are:
 * Video as input support via OpenCV
@@ -53,7 +54,7 @@ You can use the following command to do inference on FPGA with a pre-trained obj
 The demo uses OpenCV to display the resulting frame with detections (rendered as bounding boxes and labels, if provided).
 In the default mode the demo reports
 
-https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/demo.png
+![image]https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/demo.png
 
 
 ## See Also
