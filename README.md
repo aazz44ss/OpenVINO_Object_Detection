@@ -1,23 +1,8 @@
 # OpenVINO_19R1_Object_Detection
 
 This demo showcases Mutiple Video Object Detection with SSD.
-Async API usage can improve overall frame-rate of the application, because rather than wait for inference to complete,
-the app can continue doing things on the host, while accelerator is busy.
-Specifically, this demo keeps two parallel infer requests and while the current is processed, the input frame for the next
-is being captured. This essentially hides the latency of capturing, so that the overall framerate is rather
-determined by the `MAXIMUM(detection time, input capturing time)` and not the `SUM(detection time, input capturing time)`.
-
-> **NOTE:** This topic describes usage of C++ implementation of the Object Detection SSD Demo Async API. For the Python* implementation, refer to [Object Detection SSD Python* Demo, Async API Performance Showcase](./inference-engine/ie_bridges/python/sample/object_detection_demo_ssd_async/README.md).
-
-The technique can be generalized to any available parallel slack, for example, doing inference and simultaneously encoding the resulting
-(previous) frames or running further inference, like some emotion detection on top of the face detection results.
-There are important performance
-caveats though, for example the tasks that run in parallel should try to avoid oversubscribing the shared compute resources.
-For example, if the inference is performed on the FPGA, and the CPU is essentially idle, than it makes sense to do things on the CPU
-in parallel. But if the inference is performed say on the GPU, than it can take little gain to do the (resulting video) encoding
-on the same GPU in parallel, because the device is already busy.
-
-This and other performance implications and tips for the Async API are covered in the [Optimization Guide](https://software.intel.com/en-us/articles/OpenVINO-Inference-Engine-Optimization-Guide)
+This demo haven't implement NIC part, the data is on the local side.
+https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/System.png
 
 Other demo objectives are:
 * Video as input support via OpenCV
@@ -67,9 +52,8 @@ You can use the following command to do inference on FPGA with a pre-trained obj
 
 The demo uses OpenCV to display the resulting frame with detections (rendered as bounding boxes and labels, if provided).
 In the default mode the demo reports
-* **OpenCV time**: frame decoding + time to render the bounding boxes, labels, and displaying the results.
-* **Detection time**: inference time for the (object detection) network. It is reported in the "SYNC" mode only.
-* **Wallclock time**, which is combined (application level) performance.
+
+https://github.com/aazz44ss/OpenVINO_19R1_Object_Detection/blob/master/pic/demo.png
 
 
 ## See Also
