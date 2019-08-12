@@ -1,4 +1,4 @@
-# OpenVINO_19R1_Object_Detection
+# Object_Detection implement with OpenVINO 2019 R1
 
 This demo showcases Mutiple Video Object Detection with SSD.
 This demo haven't implement NIC part, the data is on the local side.
